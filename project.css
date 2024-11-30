@@ -1,0 +1,91 @@
+body {
+    background-image: url(https://media.gettyimages.com/id/2166205091/video/4k-colorful-particles-vertical-movement-background-animation-4k.jpg?s=640x640&k=20&c=n6cGOcaZvd74KwdsTpot9jvI4khNFiK-cVV1kA2cooE=);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: #47db2d;
+}
+
+#container {
+    background-image: url(https://images.pond5.com/question-mark-animation-quiz-background-footage-012033064_iconl.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+    align-content: center;
+    padding: 20px;
+    border: 2px solid #333;
+    background-color: #fff;
+    width: 800px;
+    /* height: 450px; */
+    border-radius: 10px;
+    box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.878);
+}
+
+#time-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#timer,.timer {
+    font-size: 18px;
+}
+
+.hidden{
+    display: none;
+}
+
+.submit-top {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.option-button {
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.option-button:hover {
+    background-color: #f0f8ff;
+}
+
+.option-button.selected{
+    background-color: #007bff;
+    color: white;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+
+

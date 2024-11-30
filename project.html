@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-Application</title>
+    <link rel="stylesheet" href="project.css">
+    <link rel="fav-icon" href="https://play-lh.googleusercontent.com/z4YAJairHz5KwvEQd5LTNjO_bpdMTk6lbvRwgQ_rwEDfbEafQ37q-9F_RUQbAuEzDQ">
+</head>
+<body>
+    <div id="container">
+        <div id="fst-screen">
+            <h1>JavaScript Quiz</h1>
+            <button id="start-botton">Start Quiz</button>
+        </div>
+        <div id="second-screen" class="hidden">
+            <div id="time-container">
+                <div class="timer">Time Left: <span id="timer">30:00</span></div>
+                <button id="submit-button" class="submit-top">Submit</button>
+            </div>
+            <div id="question-container">
+                <h2 id="question"></h2>
+                <div id="option"></div>
+            </div>
+            <div id="next-prev">
+                <button id="previous" disabled>Previous</button>
+                <button id="next">Next</button>
+            </div>
+        </div>
+        <div id="third-screen" class="hidden">
+            <h2>Quiz Completed!</h2>
+            <p id="result"></p>
+            <button id="restart">Restart Quiz</button>
+        </div>
+    </div>
+    <script src="project.js"></script>
+</body>
+</html>
