@@ -22,7 +22,7 @@ body{
 button{
     background-color: rgb(26, 121, 180);
     padding: 8px;
-    width: 275px;
+    /* width: 275px; */
     border-radius: 20px;
 
 }
