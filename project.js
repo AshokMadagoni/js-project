@@ -115,6 +115,7 @@ function navigateQuestion(a) {
 function restartQuiz() {
     resultScreen.classList.add('hidden');
     startscreen.classList.remove('hidden');
+    timerdisplay.textContent = "30:00"
     currentQuestionIndex = 0;
     selectedAnswers = [];
     timeRemaining = 1800;
