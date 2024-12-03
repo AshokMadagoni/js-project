@@ -5,7 +5,6 @@ function addUser() {
     if (username && password) {
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
-        // Check if the username already exists
         if (!users.some(user => user.username === username)) {
             users.push({ username: username, password: password });
             localStorage.setItem("users", JSON.stringify(users));

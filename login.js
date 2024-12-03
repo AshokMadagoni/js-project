@@ -10,7 +10,7 @@ function login() {
         alert("Logged in successfully!");
         document.getElementById("email").value = '';
         document.getElementById("password").value = '';
-        location.href="project.html"
+        location.href="quizselect.html"
     } else {
         alert("No credentials found in storage. Sorry, you can't log in.");
         document.getElementById("email").value = '';
