@@ -17,13 +17,13 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient( to right,#74BDCB,#EFE7BC);
+            background: linear-gradient( to right, #74BDCB, #EFE7BC);
             color: white;
         }
 
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr; /* Default: two columns */
             grid-gap: 50px; 
             width: 50%; 
             max-width: 600px; 
@@ -34,7 +34,7 @@
             grid-column: span 2;
             margin-bottom: 20px;
             font-size: 30px;
-            color:black;
+            color: black;
         }
 
         button {
@@ -51,6 +51,12 @@
 
         button:hover {
             transform: scale(1.05); 
+        }
+        @media screen and (max-width: 560px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -69,25 +75,25 @@
         let cssquiz = document.getElementById("cssbutton");
         let jsquiz = document.getElementById("JavaScriptbutton");
         let pythonquiz = document.getElementById("pythonbutton");
+
         htmlquiz.onclick = () => {
             localStorage.setItem("page", "HTML");
-            location.href="project.html"
-         
+            location.href = "project.html";
         };
 
         cssquiz.onclick = () => {
             localStorage.setItem("page", "CSS");
-            location.href="project.html"
+            location.href = "project.html";
         };
 
         jsquiz.onclick = () => {
             localStorage.setItem("page", "JAVASCRIPT");
-            location.href="project.html"
+            location.href = "project.html";
         };
 
         pythonquiz.onclick = () => {
             localStorage.setItem("page", "PYTHON");
-            location.href="project.html"
+            location.href = "project.html";
         };
     </script>
 </body>
