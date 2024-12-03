@@ -11,11 +11,13 @@ let nextbutton=document.getElementById("next")
 let resultdisplay=document.getElementById("result")
 let restartbutton=document.getElementById("restart")
 
+
 let questions;
 let pageload=localStorage.getItem("page");
 let quiztitle=document.getElementById("quiztitle")
 quiztitle.textContent=`${pageload} QUIZ`
 if(pageload=="JAVASCRIPT"){
+    document.body.style.backgroundColor = "#f0db41";
      questions = [
         { question: "What is JavaScript?", options: ["A language", "A framework", "A library", "A tool"], answer: 0 },
         { question: "Which company developed JavaScript?", options: ["Microsoft", "Apple", "Netscape", "Google"], answer: 2 },
@@ -51,6 +53,7 @@ if(pageload=="JAVASCRIPT"){
     ];
 }
 else if(pageload=="HTML"){
+    document.body.style.backgroundColor = " #F06529";
      questions = [
         { question: "What does HTML stand for?", options: ["Hyper Text Markup Language", "High Text Markup Language", "Hyperlink Text Markup Language", "Home Tool Markup Language"], answer: 0 },
         { question: "Which tag is used to define an internal style sheet in HTML?", options: ["<style>", "<script>", "<link>", "<css>"], answer: 0 },
@@ -90,6 +93,7 @@ else if(pageload=="HTML"){
     
 }
 else if(pageload=="CSS"){
+    document.body.style.backgroundColor = "#2965f1";
      questions= [
         { question: "Which CSS property is used to change the background color?", options: ["background-color", "color", "bg-color", "background"], answer: 0 },
         { question: "What is the default value of the `position` property in CSS?", options: ["absolute", "relative", "static", "fixed"], answer: 2 },
@@ -129,6 +133,7 @@ else if(pageload=="CSS"){
     
 }
 else{
+    document.body.style.background = "linear-gradient(to right, #306998, #ffd43b)";
      questions = [
         { question: "Which keyword is used to define a function in Python?", options: ["def", "function", "fun", "define"], answer: 0 },
         { question: "What is the correct syntax for a while loop in Python?", options: ["while condition:", "while (condition):", "for condition:", "loop while condition:"], answer: 0 },
