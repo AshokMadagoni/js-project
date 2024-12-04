@@ -10,8 +10,12 @@ let prevbutton=document.getElementById("previous")
 let nextbutton=document.getElementById("next")
 let resultdisplay=document.getElementById("result")
 let restartbutton=document.getElementById("restart")
-
-
+let topname = document.getElementById("username"); 
+let username= localStorage.getItem("sidename"); 
+topname.textContent = `${username}`;
+const messageSound = new Audio('C:/Users/madag/OneDrive/Documents/10k_projects/js-project/message.mp3.wav');
+const messageSound1 = new Audio('C:/Users/madag/OneDrive/Documents/10k_projects/js-project/message1.mp3.wav');
+const messageSound2 = new Audio('C:/Users/madag/OneDrive/Documents/10k_projects/js-project/message2.mp3.wav');
 let questions;
 let pageload=localStorage.getItem("page");
 let quiztitle=document.getElementById("quiztitle")
@@ -239,6 +243,12 @@ function updateControls() {
 function navigateQuestion(a) {
     currentQuestionIndex +=a;
     loadQuestion();
+    if (a === 1) {
+        messageSound.play(); 
+    }
+    else{
+        messageSound1.play();
+    }
 }
 
 function restartQuiz() {
@@ -258,6 +268,7 @@ function submitQuiz() {
             score++;
         }
     });
+    messageSound2.play();
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
     resultdisplay.textContent = `You scored ${score} out of ${questions.length}`;

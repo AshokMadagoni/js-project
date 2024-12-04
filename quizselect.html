@@ -19,11 +19,29 @@
             height: 100vh;
             background: linear-gradient( to right, #74BDCB, #EFE7BC);
             color: white;
+            position: relative; 
+        }
+
+        #username-top {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 30px;
+            color: black;
+            display: flex;
+            align-items: center; 
+        }
+
+        #username-top img {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px; 
+            border-radius: 50%; 
         }
 
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Default: two columns */
+            grid-template-columns: 1fr 1fr; 
             grid-gap: 50px; 
             width: 50%; 
             max-width: 600px; 
@@ -52,6 +70,7 @@
         button:hover {
             transform: scale(1.05); 
         }
+
         @media screen and (max-width: 560px) {
             .container {
                 display: flex;
@@ -61,6 +80,10 @@
     </style>
 </head>
 <body>
+    <div id="username-top">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnBLMyaL-5gh0nhP-vircgmtkHER58KHoMAw&s" alt="User Icon">
+        <span id="username-text"></span> 
+    </div>
     <div class="container">
         <h2>Select Your Preferred Language</h2>
         <button id="htmlbutton" style="background-color: #F06529;">HTML</button>
@@ -75,7 +98,9 @@
         let cssquiz = document.getElementById("cssbutton");
         let jsquiz = document.getElementById("JavaScriptbutton");
         let pythonquiz = document.getElementById("pythonbutton");
-
+        let topname = document.getElementById("username-text"); 
+        let username= localStorage.getItem("sidename"); 
+        topname.textContent = `${username}`;
         htmlquiz.onclick = () => {
             localStorage.setItem("page", "HTML");
             location.href = "project.html";
