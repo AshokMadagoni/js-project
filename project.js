@@ -13,9 +13,9 @@ let restartbutton=document.getElementById("restart")
 let topname = document.getElementById("username"); 
 let username= localStorage.getItem("sidename"); 
 topname.textContent = `${username}`;
-const messageSound = new Audio('C:/Users/madag/OneDrive/Documents/10k_projects/js-project/message.mp3.wav');
-const messageSound1 = new Audio('C:/Users/madag/OneDrive/Documents/10k_projects/js-project/message1.mp3.wav');
-const messageSound2 = new Audio('C:/Users/madag/OneDrive/Documents/10k_projects/js-project/message2.mp3.wav');
+const messageSound = new Audio('./message.mp3.wav');
+const messageSound1 = new Audio('./message1.mp3.wav');
+const messageSound2 = new Audio('./message2.mp3.wav');
 let questions;
 let pageload=localStorage.getItem("page");
 let quiztitle=document.getElementById("quiztitle")
