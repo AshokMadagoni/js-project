@@ -123,4 +123,21 @@ button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
+@media screen and (max-width: 425px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    #username {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #user-info {
+        top: 0px;     
+    }
+    #user-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
 
