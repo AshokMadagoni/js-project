@@ -21,6 +21,11 @@ function login() {
     }
 }
 
+function guestmode(){
+    localStorage.setItem("sidename", "Guest");
+    location.href = "quizselect.html";
+}
+
 function route() {
     location.href = "register.html";
 }
