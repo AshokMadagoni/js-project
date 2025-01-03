@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -18,89 +19,185 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient( to right, #74BDCB, #EFE7BC);
-            color: white;
-            position: relative; 
+            background: linear-gradient(to right, #74BDCB, #EFE7BC);
+            color: #333;
+            position: relative;
+            font-size: 18px;
         }
 
         #username-top {
             position: absolute;
             top: 10px;
             left: 10px;
-            font-size: 30px;
-            color: black;
+            font-size: 25px;
+            color: #333;
             display: flex;
-            align-items: center; 
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 10px 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         #username-top img {
-            width: 60px;
-            height: 60px;
-            margin-right: 10px; 
-            border-radius: 50%; 
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #file-input {
+            display: none;
         }
 
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr; 
-            grid-gap: 50px; 
-            width: 50%; 
-            max-width: 600px; 
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+            width: 60%;
+            max-width: 700px;
             text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 35px;
+            margin-bottom: 10px;
+            color: #333;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 3s ease-out forwards, scaleUp 3s ease-in-out forwards;
+            text-align: center;
+            grid-column: span 2;
         }
 
         h2 {
             grid-column: span 2;
-            margin-bottom: 20px;
-            font-size: 30px;
-            color: black;
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #333;
         }
 
         button {
-            padding: 20px 30px;
+            padding: 20px 35px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 18px;
             font-weight: bold;
             color: white;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            background-color: rgba(0, 0, 0, 0.8);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
         }
 
         button:hover {
-            transform: scale(1.05); 
-        }                                  
+            transform: scale(1.1);
+        }
+
+        #htmlbutton {
+            background-color: #F06529;
+        }
+
+        #cssbutton {
+            background-color: #2965f1;
+        }
+
+        #JavaScriptbutton {
+            background-color: #f0db41;
+        }
+
+        #pythonbutton {
+            background-color: #4B8BBE;
+        }
+
+        #logout-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #logout-btn:hover {
+            background-color: #FF2A00;
+        }
+
         @media screen and (max-width: 560px) {
             .container {
                 display: flex;
                 flex-direction: column;
             }
-            body{
+            body {
                 flex-direction: column;
-            }  
-        #username-top {
-            top: 0px;
-            font-size: 20px;
+            }
+            #username-top {
+                top: 0;
+                font-size: 20px;
+            }
+            #username-top img {
+                width: 35px;
+                height: 35px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 20px;
+            }
         }
-        #username-top img {
-            width: 30px;
-            height: 30px;
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        @keyframes scaleUp {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 <body>
+    <!-- <button id="logout-btn" onclick="window.location.href='login.html';">Logout</button>
+      -->
+      <button id="logout-btn">Logout</button>
+
     <div id="username-top">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrT9QfTWesZk1IklGxsaH7hioyMTC7oLyTYg&s" alt="User Icon">
+        <img id="profile-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrT9QfTWesZk1IklGxsaH7hioyMTC7oLyTYg&s" alt="User Icon" onclick="document.getElementById('file-input').click();">
         <span id="username-text"></span> 
     </div>
+    <input type="file" id="file-input" accept="image/*" onchange="uploadImage(event)">
     <div class="container">
+        <h1>Welcome <span id="welcome"></span></h1>
         <h2>Select Your Preferred Language</h2>
-        <button id="htmlbutton" style="background-color: #F06529;">HTML</button>
-        <button id="cssbutton" style="background-color: #2965f1;">CSS</button>
-        <button id="JavaScriptbutton" style="background-color: #f0db41;">JavaScript</button>
-        <button id="pythonbutton" style="background-color: gray;">Python</button>
+        <button id="htmlbutton">HTML</button>
+        <button id="cssbutton">CSS</button>
+        <button id="JavaScriptbutton">JavaScript</button>
+        <button id="pythonbutton">Python</button>
+        <!-- <button id="problem-solving-button" style="background-color: #333;">Problem Solving</button> -->
     </div>
 
     <script>
@@ -110,8 +207,20 @@
         let jsquiz = document.getElementById("JavaScriptbutton");
         let pythonquiz = document.getElementById("pythonbutton");
         let topname = document.getElementById("username-text"); 
-        let username= localStorage.getItem("sidename"); 
+        let username = localStorage.getItem("sidename"); 
+        let welcome = document.getElementById("welcome");
+        let logout=document.getElementById("logout-btn")
+
+        welcome.textContent = `${username}`;
         topname.textContent = `${username}`;
+
+        // Check if the user has uploaded a profile image
+
+        let profileImage = localStorage.getItem("profileImage");
+        if (profileImage) {
+            document.getElementById("profile-image").src = profileImage;
+        }
+
         htmlquiz.onclick = () => {
             localStorage.setItem("page", "HTML");
             location.href = "project.html";
@@ -131,6 +240,33 @@
             localStorage.setItem("page", "PYTHON");
             location.href = "project.html";
         };
+
+        logout.onclick=()=>{
+            let profileImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrT9QfTWesZk1IklGxsaH7hioyMTC7oLyTYg&s";
+            localStorage.setItem("profileImage", profileImageUrl);
+            location.href="login.html"
+        }
+
+        // document.getElementById("problem-solving-button").onclick = () => {
+        //     localStorage.setItem("page", "PROBLEM SOLVING");
+        //     location.href = "project.html";
+        // };
+
+        // Function to upload profile image
+        function uploadImage(event) {
+            let file = event.target.files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    let profileImageUrl = e.target.result;
+                    localStorage.setItem("profileImage", profileImageUrl);
+                    document.getElementById("profile-image").src = profileImageUrl;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
     </script>
 </body>
 </html>
+
+
