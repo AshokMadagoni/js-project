@@ -11,8 +11,18 @@ let nextbutton=document.getElementById("next")
 let resultdisplay=document.getElementById("result")
 let restartbutton=document.getElementById("restart")
 let topname = document.getElementById("username"); 
+let btn=document.getElementById("logout-btn")
+let home=document.getElementById("home")
+let profile=document.getElementById("user-icon")
+let correct=document.getElementById("correct")
+let wrong=document.getElementById("wrong")
+
 let username= localStorage.getItem("sidename"); 
 topname.textContent = `${username}`;
+
+let profilelink=localStorage.getItem("profileImage")
+profile.src=profilelink
+
 const messageSound = new Audio('./message.mp3.wav');
 const messageSound1 = new Audio('./message1.mp3.wav');
 const messageSound2 = new Audio('./message2.mp3.wav');
@@ -272,6 +282,8 @@ function submitQuiz() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
     resultdisplay.textContent = `You scored ${score} out of ${questions.length}`;
+    correct.textContent=`Correct Answers:${score}`
+    wrong.textContent=`Wrong Answers:${questions.length-score}`
 }
 
 
@@ -280,6 +292,12 @@ nextbutton.onclick =()=> navigateQuestion(1);
 prevbutton.onclick = ()=> navigateQuestion(-1);
 submitbutton.onclick = submitQuiz;
 restartbutton.onclick = restartQuiz;
+btn.onclick=()=>{
+    location.href="login.html"
+}
+home.onclick=()=>{
+    location.href="quizselect.html"
+}
 
 
 
