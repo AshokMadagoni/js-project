@@ -21,7 +21,12 @@ let username= localStorage.getItem("sidename");
 topname.textContent = `${username}`;
 
 let profilelink=localStorage.getItem("profileImage")
-profile.src=profilelink
+if(profilelink){
+    profile.src=profilelink
+}
+else{
+    profile.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrT9QfTWesZk1IklGxsaH7hioyMTC7oLyTYg&s"
+}
 
 const messageSound = new Audio('./message.mp3.wav');
 const messageSound1 = new Audio('./message1.mp3.wav');
