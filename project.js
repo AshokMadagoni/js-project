@@ -289,6 +289,10 @@ function submitQuiz() {
     resultdisplay.textContent = `You scored ${score} out of ${questions.length}`;
     correct.textContent=`Correct Answers:${score}`
     wrong.textContent=`Wrong Answers:${questions.length-score}`
+
+    let scores= JSON.parse(localStorage.getItem("scores")) || [];
+    scores.push({ username: username, score: score });
+    localStorage.setItem("scores", JSON.stringify(scores))
 }
 
 

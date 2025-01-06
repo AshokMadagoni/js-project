@@ -6,9 +6,10 @@
     <title>Quiz-Application</title>
     <link rel="stylesheet" href="project.css">
     <link rel="icon" href="https://png.pngtree.com/png-clipart/20230425/original/pngtree-pop-quiz-clipart-images-png-image_9095199.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <button id="logout-btn">Logout</button>
+    <button id="logout-btn">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
     <div id="user-info">
         <img id="user-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrT9QfTWesZk1IklGxsaH7hioyMTC7oLyTYg&s" alt="User Icon" />
         <span id="username"></span>
@@ -17,7 +18,7 @@
     <div id="container">
         <div id="fst-screen">
             <h1 id="quiztitle"></h1>
-            <button id="start-botton">Start Quiz</button>
+            <button id="start-botton"><i class="fa-solid fa-hourglass-start"></i>Start Quiz</button>
         </div>
         <div id="second-screen" class="hidden">
             <div id="time-container">
@@ -29,8 +30,8 @@
                 <div id="option"></div>
             </div>
             <div id="next-prev">
-                <button id="previous" disabled>Previous</button>
-                <button id="next">Next</button>
+                <button id="previous" disabled><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                <button id="next"> Next <i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </div>
         <div id="third-screen" class="hidden">
@@ -38,8 +39,8 @@
             <p id="correct" style="color: green;"></p>
             <p id="wrong" style="color: red;"></p>
             <p id="result"></p>
-            <button id="restart">Restart Quiz</button>
-            <button id="home">Home</button>
+            <button id="restart">Restart Quiz <i class="fa-solid fa-rotate"></i></button>
+            <button id="home"><i class="fa-solid fa-house"></i>Home</button>
         </div>
     </div>
     <script src="project.js"></script>
