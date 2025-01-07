@@ -20,6 +20,8 @@ let wrong=document.getElementById("wrong")
 let username= localStorage.getItem("sidename"); 
 topname.textContent = `${username}`;
 
+let category=localStorage.getItem("page")
+
 let profilelink=localStorage.getItem("profileImage")
 if(profilelink){
     profile.src=profilelink
@@ -290,11 +292,35 @@ function submitQuiz() {
     correct.textContent=`Correct Answers:${score}`
     wrong.textContent=`Wrong Answers:${questions.length-score}`
 
-    let scores= JSON.parse(localStorage.getItem("scores")) || [];
-    scores.push({ username: username, score: score });
-    localStorage.setItem("scores", JSON.stringify(scores))
+let scores = JSON.parse(localStorage.getItem("scores")) || {};
+
+// Function to update scores
+function updateScores(username, category, newScore) {
+    // Check if the user exists, if not, initialize their structure
+    if (!scores[username]) {
+        scores[username] = {
+            HTML: [],
+            CSS: [],
+            JAVASCRIPT: [],
+            PYTHON: [],
+        };
+    }
+
+    // Push the new score into the respective category array
+    if (scores[username][category]) {
+        scores[username][category].push(newScore);
+    } else {
+        console.error(`Invalid category: ${category}`);
+    }
+
+    // Save the updated scores back to localStorage
+    localStorage.setItem("scores", JSON.stringify(scores));
 }
 
+// Example Usage
+updateScores(username, category,score);
+
+}
 
 startButton.onclick = startQuiz;
 nextbutton.onclick =()=> navigateQuestion(1);

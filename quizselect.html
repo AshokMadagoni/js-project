@@ -61,7 +61,7 @@
             border: none;
             border-radius: 10px;
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -81,7 +81,7 @@
             border: none;
             border-radius: 10px;
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 23px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
@@ -248,7 +248,7 @@
 </head>
 <body>
     <button id="logout-btn">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
-    <button id="my-result-btn" onclick="viewResults()"><i class="fa-solid fa-circle-info"></i>  My Result</button>
+    <button id="my-result-btn" onclick="viewResults()"><i class="fa-solid fa-circle-info"></i> Track My Scores</button>
 
     <div id="username-top">
         <img id="profile-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrT9QfTWesZk1IklGxsaH7hioyMTC7oLyTYg&s" alt="User Icon" onclick="document.getElementById('file-input').click();">
@@ -320,7 +320,7 @@
         }
 
         function viewResults() {
-            location.href = "results.html";
+            location.href = "result.html";
         }
     </script>
 </body>

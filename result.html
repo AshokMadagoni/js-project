@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body{
+            text-align: center;
+            background: linear-gradient( to right,#74BDCB,#EFE7BC);
+        }
+        button{
+            float: right;
+            font-size: 18px;
+            background-color: rgb(255, 64, 0);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick=location.href="quizselect.html">HOME</button>
+    <div id="htmldiv"><h2>HTML Result</h2><br></div>
+    <div id="cssdiv"><h2>CSS Result</h2></div>
+    <div id="javascriptdiv"><h2>JAVACSRIPT Result</h2></div>
+    <div id="pythondiv"><h2>PYTHON Result</h2></div>
+    <!-- <script>
+        
+            let data = localStorage.getItem("scores");
+            let username = localStorage.getItem("sidename");
+    
+            data = JSON.parse(data);
+    
+            // Fetch results for each subject
+            let data1 = data[username]?.HTML || [];
+            let data2 = data[username]?.CSS || [];
+            let data3 = data[username]?.JAVASCRIPT || [];
+            let data4 = data[username]?.PYTHON || [];
+    
+            // Subject arrays
+            let subjects = [data1, data2, data3, data4];
+            let subjectDivs = ["htmldiv", "cssdiv", "javascriptdiv", "pythondiv"];
+    
+            // Loop through each subject dynamically
+            for (let j = 0; j < subjects.length; j++) {
+                let subjectData = subjects[j];
+                let displayDiv = document.getElementById(subjectDivs[j]);
+
+                if(subjectData.length==0){
+                    let card = document.createElement("div");
+                    card.innerText="Not Attempted"
+                    card.style.display = "inline-block";
+                    card.style.background = "green";
+                    card.style.color = "white";
+                    card.style.textAlign = "center";
+                    card.style.width = "300px";
+                    card.style.margin = "20px";
+                    card.style.padding = "10px";
+                    card.style.borderRadius = "8px";
+    
+                    // Append the card to the corresponding div
+                    displayDiv.appendChild(card);
+                }
+
+                for (let i = 0; i < subjectData.length; i++) {
+                    let card = document.createElement("div");
+                    card.id = `div${j}_${i}`; // Unique ID using j and i
+                    card.innerHTML = `<h1>Result ${i + 1}</h1><h3>Correct Answers: ${subjectData[i]}/34</h3>`;
+    
+                    // Apply styles to the card
+                    card.style.display = "inline-block";
+                    card.style.background = "green";
+                    card.style.color = "white";
+                    card.style.textAlign = "center";
+                    card.style.width = "300px";
+                    card.style.margin = "20px";
+                    card.style.padding = "10px";
+                    card.style.borderRadius = "8px";
+                    if(subjectData[i]<10){
+                        card.style.background = "red";
+                    }
+    
+                    // Append the card to the corresponding div
+                    displayDiv.appendChild(card);
+                }
+            }
+    </script> -->
+    
+
+    <script>
+        let data = localStorage.getItem("scores");
+        let username = localStorage.getItem("sidename");
+    
+        // Check if scores exist in localStorage
+        if (!data) {
+            data = {}; // Initialize as an empty object to avoid further errors
+        } else {
+            data = JSON.parse(data);
+        }
+    
+        // Check if the username exists in the parsed data
+        if (!data[username]) {
+            data[username] = {}; // Initialize as an empty object to avoid errors
+        }
+    
+        // Fetch results for each subject
+        let data1 = data[username]?.HTML || [];
+        let data2 = data[username]?.CSS || [];
+        let data3 = data[username]?.JAVASCRIPT || [];
+        let data4 = data[username]?.PYTHON || [];
+    
+        // Subject arrays
+        let subjects = [data1, data2, data3, data4];
+        let subjectDivs = ["htmldiv", "cssdiv", "javascriptdiv", "pythondiv"];
+    
+        // Loop through each subject dynamically
+        for (let j = 0; j < subjects.length; j++) {
+            let subjectData = subjects[j];
+            let displayDiv = document.getElementById(subjectDivs[j]);
+    
+            // Display "Not Attempted" for empty subjects
+            if (subjectData.length === 0) {
+                let card = document.createElement("div");
+                card.innerText = "Not Attempted";
+                card.style.display = "inline-block";
+                card.style.background = "green";
+                card.style.color = "white";
+                card.style.textAlign = "center";
+                card.style.width = "300px";
+                card.style.margin = "20px";
+                card.style.padding = "10px";
+                card.style.borderRadius = "8px";
+    
+                displayDiv.appendChild(card);
+            }
+    
+            // Display scores for each result
+            for (let i = 0; i < subjectData.length; i++) {
+                let card = document.createElement("div");
+                card.id = `div${j}_${i}`; // Unique ID using j and i
+                card.innerHTML = `<h1>Attempt:${i + 1}</h1><h3>Correct Answers: ${subjectData[i]}/34</h3>`;
+    
+                // Apply styles to the card
+                card.style.display = "inline-block";
+                card.style.background = "green";
+                card.style.color = "white";
+                card.style.textAlign = "center";
+                card.style.width = "300px";
+                card.style.margin = "20px";
+                card.style.padding = "10px";
+                card.style.borderRadius = "8px";
+    
+                if (subjectData[i] < 10) {
+                    card.style.background = "red";
+                    let h3=document.createElement("h3")
+                    h3.innerText="Minimum marks to pass : 10"
+                    card.append(h3)
+                }
+                else{
+                    let h3=document.createElement("h3")
+                h3.innerText="Passed"
+                card.append(h3)
+                }
+    
+                displayDiv.appendChild(card);
+            }
+        }
+    </script>
+    
+</body>
+</html>
